@@ -1,0 +1,33 @@
+<%- include('layouts/header.ejs')%>
+
+<h1>Sign In</h1>
+<% if (error_msg) { %>
+  <div class="alert alert-danger"><%= error_msg %></div>
+<% } %>
+<% if (success_msg) { %>
+  <div class="alert alert-success"><%= success_msg %></div>
+<% } %>
+<form action="/users/signin" method="POST">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+  <div>
+    <button type="submit">Sign In</button>
+  </div>
+  <div>
+    <a href="/users/signup">Sign Up?</a>
+  </div>
+  <div>
+    <a href="/users/forgot">Forgot Password?</a>
+  </div>
+  <!-- <div>
+    <a href="/auth/google">Sign In with Google</a>
+  </div> -->
+</form>
+
+<%- include('layouts/footer.ejs')%>
